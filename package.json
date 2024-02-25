@@ -1,0 +1,19 @@
+{
+  "name": "tabelog0224",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx tsc",
+    "build:watch": "npx tsc --watch",
+    "start": "node ./dist/src/sample.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.41.2",
+    "@types/node": "^20.11.20",
+    "ts-node": "^10.9.2"
+  }
+}
