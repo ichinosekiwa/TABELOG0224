@@ -57,6 +57,7 @@ const fs_1 = __importDefault(require("fs"));
         const nextPageButton = page.locator('a.c-pagination__arrow--next');
         // ボタンがクリック可能になるまで待つ
         yield nextPageButton.waitFor({ state: 'attached' });
+        yield page.waitForTimeout(3000);
         yield Promise.all([nextPageButton.click(), page.waitForLoadState('domcontentloaded', { timeout: 3000 })]);
         yield scrapePage();
     }

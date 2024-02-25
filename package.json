@@ -6,7 +6,8 @@
   "scripts": {
     "build": "npx tsc",
     "build:watch": "npx tsc --watch",
-    "start": "node ./dist/src/sample.js"
+    "start:sample": "node ./dist/src/sample.js",
+    "start:rank": "node ./dist/src/rank.js"
   },
   "keywords": [],
   "author": "",

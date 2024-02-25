@@ -31,8 +31,8 @@ import fs from 'fs';
         console.log('Name or star element not found.');
         continue;
       }
-
       const name = await nameElement.textContent();
+
       const star = await starElement.textContent();
       restaurants.push({ name: name || '', star: star || '' });
     }
@@ -46,6 +46,9 @@ import fs from 'fs';
     const nextPageButton = page.locator('a.c-pagination__arrow--next');
     // ボタンがクリック可能になるまで待つ
     await nextPageButton.waitFor({ state: 'attached' });
+
+    await page.waitForTimeout(3000);
+
     await Promise.all([nextPageButton.click(), page.waitForLoadState('domcontentloaded', { timeout: 3000 })]);
     await scrapePage();
   }
