@@ -42,9 +42,13 @@ const fs_1 = __importDefault(require("fs"));
                     console.log('Name or star element not found.');
                     continue;
                 }
-                const name = yield nameElement.textContent();
-                const star = yield starElement.textContent();
-                restaurants.push({ name: name || '', star: star || '' });
+                // textContent() を使って要素からテキストを取得する
+                let name = yield nameElement.textContent();
+                let star = yield starElement.textContent();
+                // nullチェックを行う
+                name = name ? name.trim() : '';
+                star = star ? star.trim() : '';
+                restaurants.push({ name, star });
             }
         });
     }

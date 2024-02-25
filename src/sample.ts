@@ -31,10 +31,15 @@ import fs from 'fs';
         console.log('Name or star element not found.');
         continue;
       }
-      const name = await nameElement.textContent();
 
-      const star = await starElement.textContent();
-      restaurants.push({ name: name || '', star: star || '' });
+      let name = await nameElement.textContent();
+      let star = await starElement.textContent();
+
+      //nullチェック
+      name = name ? name.trim() : '';
+      star = star ? star.trim() : '';
+
+      restaurants.push({ name, star });
     }
   }
 
